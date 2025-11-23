@@ -10,9 +10,9 @@ app.use(express.json());
 
 
 app.get("/", (req, res)=>{
-    res.json({message: "Health check fine!"})
+    res.json({message: "Health check fine! ✅"})
 })
 
 app.listen(PORT, ()=>{
-    console.log(`Server running on port ${PORT}`)
+    console.log(`Server running on port ${PORT} ✅`)
 })

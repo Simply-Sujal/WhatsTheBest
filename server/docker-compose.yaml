@@ -1,0 +1,31 @@
+version: '3.8'
+services: 
+  node:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node_container
+    ports: 
+      - "3000:3000"
+    image: node_app
+    environment: 
+      DATABASE_URL: mongodb://root:test12345@db:27017/mydatabase
+    volumes:
+      - ./:/app
+
+  db:
+    image: mongo
+    container_name: mongo_db 
+    ports: 
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_DATABASE: mydatabase
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: test12345 
+    volumes:
+      - mongo_data:/data/db 
+
+volumes: 
+  mongo_data:
+    
+    
