@@ -9,7 +9,7 @@ services:
       - "3000:3000"
     image: node_app
     environment: 
-      DATABASE_URL: mongodb://root:test12345@db:27017/mydatabase
+      DATABASE_URL: ${DATABASE_URL}
     volumes:
       - ./:/app
 
@@ -19,9 +19,9 @@ services:
     ports: 
       - "27017:27017"
     environment:
-      MONGO_INITDB_DATABASE: mydatabase
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: test12345 
+      MONGO_INITDB_DATABASE: ${MONGO_INITDB_DATABASE}
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD} 
     volumes:
       - mongo_data:/data/db 
 

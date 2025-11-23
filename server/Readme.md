@@ -12,8 +12,7 @@ WhatsTheBest is a platform where users can search for anything best place, restr
  
 ### With Docker
 1. Clone the repository
-2. Install dependencies
-3. Set up environment variables
-4. Run the server (docker compose build && docker compose up -d)
-5. to access the mongo_db container in the terminal use 
+2. Set up environment variables
+3. Run the server (docker compose build && docker compose up -d)
+4. to access the mongo_db container in the terminal use 
     - docker exec -it mongodb_container_name mongosh -u mongodb_username -p mongodb_password --authenticationDatabase admin
